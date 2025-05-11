@@ -26,6 +26,10 @@ public class JokeReconciler implements Reconciler<Joke>, Cleaner<Joke> {
     }
 
     public DeleteControl cleanup(Joke joke, Context<Joke> context) {
+        if (joke.getSpec() == null) {
+            LOG.warn("Joke spec is null, skipping cleanup");
+            return DeleteControl.defaultDelete();
+        }
         String name = joke.getSpec().getName();
         LOG.info("Cleanup called for joke: {}", name);
         return DeleteControl.defaultDelete();

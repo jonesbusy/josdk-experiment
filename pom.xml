@@ -38,6 +38,25 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-jackson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.javaoperatorsdk</groupId>
+            <artifactId>kubernetes-webhooks-framework-core</artifactId>
+            <version>2.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>kubernetes-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>
             <artifactId>quarkus-operator-sdk</artifactId>
         </dependency>

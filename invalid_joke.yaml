@@ -1,0 +1,5 @@
+
+apiVersion: "samples.javaoperatorsdk.io/v1alpha1"
+kind: Joke
+metadata:
+  name: jr-any-invalid
